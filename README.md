@@ -1,2 +1,3 @@
-# quantum-dynamics
-A automated quantum wave function collapse readme
+# Random song to try
+
+beep boop bot
