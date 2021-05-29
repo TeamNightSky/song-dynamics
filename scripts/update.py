@@ -4,7 +4,7 @@ import requests
 import datetime
 from github import Github
 
-
+SHIFT = 5
 RESTBASE = 'https://play.asti.ga/rest/'
 PARAMS = {
     'u': os.getenv('EMAIL'),
@@ -28,7 +28,7 @@ now = datetime.datetime.now()
 title = song.get('title')
 author = song.get('artist', 'Not listed')
 timestamp = "{}:{:02}:{:02}".format(
-    now.hour - 5,
+    (now.hour + 24 - SHIFT) % 24,
     now.minute,
     now.second
 )
