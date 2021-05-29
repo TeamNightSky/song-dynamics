@@ -24,9 +24,9 @@ song_resp = requests.get(
 )
 song = song_resp.json()['subsonic-response']['randomSongs']['song'][0]
 now = datetime.datetime.now()
+
 title = song.get('title')
 author = song.get('artist', 'Not listed')
-print(song)
 timestamp = "{}:{:02}:{:02}".format(
     now.hour - 5,
     now.minute,
@@ -36,7 +36,7 @@ timestamp = "{}:{:02}:{:02}".format(
 with open('scripts/template.html', 'r') as f:
     template = f.read()
 
-exit()
+
 g = Github(os.getenv('PAT'))
 repo = g.get_repo('GrandMoff100/song-dynamics')
 
